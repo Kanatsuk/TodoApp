@@ -28,9 +28,19 @@ class Todo: Object {
             let todo = Todo()
             let now = Date()
             
-            todo.id = 1
+            let formatter = DateFormatter()
+            
+            formatter.dateFormat = "yyyy/MM/dd"
+            
+            
+            
+            let maxId = (realm.objects(Todo.self).max(ofProperty: "id") as Int? ?? 0)
+            
+            
+            
+            todo.id = maxId + 1
             todo.title = title
-            todo.date = "2019/03/13"
+            todo.date = formatter.string(from: now)
             
             realm.add(todo)
         }
@@ -48,5 +58,29 @@ class Todo: Object {
         return todos
     }
 
-
+    func update(todo: Todo, newTitle: String){
+        
+        let realm = try! Realm()
+        
+        let targetTodo = findById(id: todo.id)
+        
+        try! realm.write {
+            targetTodo.title = newTitle
+        }
+        
+        
+        try! realm.write{
+            
+            
+        }
+        
+    }
+    
+    func findById(id: Int) -> Todo{
+        let realm = try! Realm()
+    
+    let todo = realm.objects(Todo.self).filter("id = \(id)").first
+   return todo!
+    }
+    
 }

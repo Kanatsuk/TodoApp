@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="追加"/>
                                 <connections>
-                                    <segue destination="Wca-O4-Ipf" kind="show" id="isi-B8-hnl"/>
+                                    <segue destination="Wca-O4-Ipf" kind="show" identifier="toAddVC" id="isi-B8-hnl"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1502" y="-344"/>
+            <point key="canvasLocation" x="-1735" y="-466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fiO-wZ-CZX">
@@ -73,7 +73,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOm-wE-h2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2546" y="-502"/>
+            <point key="canvasLocation" x="-2340" y="-504"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="h0n-yO-aTr">
@@ -108,12 +108,13 @@
                         <viewLayoutGuide key="safeArea" id="RUk-Gq-Ssg"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="5mw-cN-cXs" id="mga-yR-l2Z"/>
                         <outlet property="textField" destination="MSf-NX-c0H" id="mP9-Nc-ja5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgb-en-aCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="-355"/>
+            <point key="canvasLocation" x="-1783" y="-497"/>
         </scene>
     </scenes>
 </document>
