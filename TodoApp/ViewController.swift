@@ -84,6 +84,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
+            
+        
+            let todo = Todo()
+           
+            let deleteTarget = todos[indexPath.row]
+            todo.delete(id: deleteTarget.id)
+            
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
